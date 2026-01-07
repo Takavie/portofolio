@@ -233,72 +233,61 @@ body {
     z-index: 0;
 }
 
-/* ================= BUTTONS (FIXED SHAPE) ================= */
+/* ================= HERO BUTTON (FINAL FIX) ================= */
+
 .dual-btn {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    gap: 18px;
+    gap: 14px;
     margin-top: 42px;
 }
 
 /* base button */
 .scroll-btn {
-    min-width: 180px;
-    height: 48px;
+    width: 100%;
+    max-width: 340px;
+    height: 52px;
 
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
 
-    padding: 0 26px;
-    border-radius: 14px;
+    padding: 0 24px;
 
-    font-size: 0.95rem;
-    font-weight: 600;
-    line-height: 1;
-
-    text-align: center;
-    white-space: nowrap;
-    text-decoration: none;
+    border-radius: 999px; /* OVAL / PILL */
+    text-decoration: none; /* HILANGKAN GARIS */
     color: #fff;
+
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: .3px;
+
+    line-height: 1;
+    text-align: center;
 
     transition: transform .25s ease, filter .25s ease;
 }
 
-/* Hubungi Saya (default accent) */
+/* Hubungi Saya */
 .scroll-btn.primary {
     background: var(--accent);
 }
 
-/* Tentang Saya (biru lembut) */
+/* Tentang Saya */
 .about-btn {
     background: linear-gradient(135deg, #3b82f6, #06b6d4);
 }
 
-/* Download CV (hijau premium) */
+/* Download CV */
 .cv-btn {
     background: linear-gradient(135deg, #22c55e, #16a34a);
 }
 
-/* Hover effect konsisten */
+/* Hover */
 .scroll-btn:hover {
     transform: translateY(-3px);
     filter: brightness(1.1);
-}
-@media (max-width: 768px) {
-    .dual-btn {
-        flex-direction: column;
-        gap: 14px;
-    }
-
-    .scroll-btn {
-        width: 100%;
-        max-width: 280px;
-        height: 46px;
-        font-size: 0.9rem;
-        border-radius: 12px;
-    }
 }
 
 /* ================= SECTION GENERAL ================= */
@@ -675,6 +664,7 @@ section {
 }
 
 /* redeploy trigger */
+
 
 
 
