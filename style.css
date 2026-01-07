@@ -1,0 +1,485 @@
+/* ================= ROOT THEME ================= */
+:root {
+    --bg: #0b0b12;
+    --text: #ffffff;
+    --muted: #dbe4f0;
+    --accent: linear-gradient(135deg, #7f5cff, #4dd8ff, #ff5ce1);
+    --glass: rgba(255, 255, 255, 0.06);
+    --border: rgba(255, 255, 255, 0.12);
+}
+
+body.light {
+    --bg: #ffffff;
+    --text: #111;
+    --muted: #444;
+    --glass: #f3f3f3;
+    --border: #ddd;
+}
+
+/* ================= RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+/* ================= NAVBAR ================= */
+/* ===== STICKY NAVBAR ===== */
+/* ================= NAVBAR FIX ================= */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    backdrop-filter: blur(14px);
+    background: rgba(11, 11, 18, 0.65);
+    border-bottom: 1px solid var(--border);
+}
+
+/* container dalam navbar */
+.nav-inner {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 40px;
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* logo kiri */
+.logo {
+    font-family: 'Cinzel', serif;
+    font-size: 2.4rem;
+    /* JELAS BESAR */
+    font-weight: 700;
+    letter-spacing: 6px;
+    text-decoration: none;
+    color: var(--text);
+    line-height: 1;
+    transition: .35s ease;
+}
+
+.logo {
+    background: linear-gradient(135deg, #7f5cff, #4dd8ff, #ff5ce1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.logo:hover {
+    opacity: .85;
+    transform: translateY(-1px);
+}
+
+
+/* kanan: menu + toggle */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+/* menu */
+.nav-menu {
+    display: flex;
+    gap: 28px;
+}
+
+.nav-menu a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: .95rem;
+    opacity: .8;
+    position: relative;
+    transition: .3s;
+}
+
+.nav-menu a:hover {
+    opacity: 1;
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: #00ffe7;
+    transition: .3s;
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+/* toggle */
+.theme-btn {
+    background: none;
+    border: none;
+    color: var(--text);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* supaya konten tidak ketutup navbar */
+body {
+    padding-top: 90px;
+}
+
+/* ================= HERO ================= */
+.hero {
+    position: relative;
+    text-align: center;
+    padding: 140px 24px 160px;
+}
+
+.hero-sub {
+    font-size: .9rem;
+    letter-spacing: 1.5px;
+    opacity: .75;
+    margin-bottom: 14px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 5vw, 3.4rem);
+    margin-bottom: 18px;
+}
+
+.tagline {
+    opacity: .8;
+    margin-bottom: 42px;
+}
+
+/* Glow Hero */
+.hero-glow {
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    background: var(--accent);
+    filter: blur(140px);
+    top: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: .6;
+    z-index: 0;
+}
+
+/* Buttons */
+.dual-btn {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+}
+
+.scroll-btn {
+    padding: 14px 34px;
+    border-radius: 40px;
+    background: var(--accent);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: .3s ease;
+}
+
+.scroll-btn.outline {
+    background: transparent;
+    border: 1px solid var(--border);
+}
+
+.scroll-btn:hover {
+    transform: translateY(-3px);
+}
+
+/* ================= SECTION GENERAL ================= */
+section {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: auto;
+    padding: 140px 8%;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 2.6rem);
+    margin-bottom: 60px;
+}
+
+/* ================= ABOUT ================= */
+.about {
+    position: relative;
+    z-index: 1;
+}
+
+.about::before {
+    content: '';
+    position: absolute;
+    inset: -120px;
+    background: radial-gradient(circle, rgba(127, 92, 255, .18), transparent 70%);
+    filter: blur(120px);
+    z-index: 0;
+}
+
+.about-title,
+.about-content {
+    position: relative;
+    z-index: 2;
+}
+
+.about-content p {
+    font-family: 'Fraunces', serif;
+    /* font jarang & classy */
+    font-size: 1.5rem;
+    /* besar & nyaman */
+    font-weight: 400;
+    line-height: 1.9;
+    color: var(--muted);
+    max-width: 60ch;
+    /* rapi & tidak melebar */
+}
+
+.about-content p+p {
+    margin-top: 26px;
+}
+
+
+/* ================= ACHIEVEMENTS ================= */
+.achievements {
+    position: relative;
+    z-index: 1;
+}
+
+.achievements::before {
+    content: '';
+    position: absolute;
+    inset: -120px;
+    background: radial-gradient(circle, rgba(0, 255, 231, .12), transparent 70%);
+    filter: blur(120px);
+    z-index: 0;
+}
+
+.achievement-title,
+.achievement-item {
+    position: relative;
+    z-index: 2;
+}
+
+.achievement-item p {
+    color: var(--muted);
+}
+
+
+/* ================= SKILLS ================= */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 28px;
+}
+
+.skill-card {
+    background: var(--glass);
+    border: 1px solid var(--border);
+    padding: 34px;
+    border-radius: 20px;
+    transition: .4s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(127, 92, 255, .25);
+}
+
+.skill-card i {
+    font-size: 2rem;
+    color: #00ffe7;
+    margin-bottom: 18px;
+}
+
+.skill-card h3 {
+    margin-bottom: 10px;
+}
+
+.skill-card p {
+    color: var(--muted);
+}
+
+/* ================= CONTACT ================= */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 26px;
+}
+
+.contact-card {
+    padding: 30px;
+    border-radius: 18px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: .3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-8px);
+}
+
+.whatsapp {
+    background: #25D366;
+}
+
+.email {
+    background: #3b82f6;
+}
+
+.instagram {
+    background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
+}
+
+.tiktok {
+    background: #000;
+}
+
+/* ================= FOOTER ================= */
+footer {
+    text-align: center;
+    padding: 60px 20px;
+    opacity: .6;
+}
+
+/* ================= ANIMATION ================= */
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity .8s ease, transform .8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ICON SECTION */
+.section-icon {
+    font-size: 2.6rem;
+    color: #00ffe7;
+    margin-bottom: 24px;
+}
+
+/* ABOUT TITLE */
+.about-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2.8rem, 5vw, 3.6rem);
+    margin-bottom: 40px;
+}
+
+/* STABILO EFFECT */
+.highlight {
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+}
+
+.highlight::before {
+    content: '';
+    position: absolute;
+    left: -6px;
+    bottom: 8px;
+    width: 110%;
+    height: 35%;
+    background: linear-gradient(120deg,
+            rgba(127, 92, 255, 0.6),
+            rgba(0, 255, 231, 0.6));
+    z-index: -1;
+    transform: skew(-6deg);
+    border-radius: 6px;
+}
+
+/* ANIMASI ABOUT */
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: all .9s ease;
+}
+
+.reveal-left.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ACHIEVEMENT TITLE */
+.achievement-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2.6rem, 5vw, 3.2rem);
+    margin-bottom: 70px;
+}
+
+/* ================= ACHIEVEMENT ITEM ================= */
+
+.achievement-item h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.3rem;
+    /* lebih besar & berkelas */
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    margin-bottom: 18px;
+    line-height: 1.2;
+}
+
+.achievement-item p {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1.2rem;
+    /* nyaman dibaca */
+    font-weight: 400;
+    color: var(--muted);
+    line-height: 1.85;
+    max-width: 48ch;
+    /* biar rapi & tidak melebar */
+}
+
+.achievement-item {
+    padding-bottom: 10px;
+}
+
+
+/* ANIMASI PRESTASI */
+.reveal-wrap {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity .9s ease, transform .9s ease;
+    transition-delay: calc(var(--i, 0) * 120ms);
+}
+
+.reveal-wrap.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== EMERGENCY TEXT VISIBILITY FIX ===== */
+.about-content,
+.about-content p,
+.achievement-item,
+.achievement-item h3,
+.achievement-item p,
+.skill-card,
+.skill-card h3,
+.skill-card p {
+    opacity: 1 !important;
+    transform: none !important;
+}
