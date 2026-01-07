@@ -341,6 +341,16 @@ section {
 .about-content p+p {
     margin-top: 26px;
 }
+.about-content p i {
+    color: #00ffe7;
+    margin-right: 10px;
+}
+
+.about-content p strong {
+    color: #ffffff;
+    font-weight: 600;
+}
+
 
 
 /* ================= ACHIEVEMENTS ================= */
@@ -664,6 +674,7 @@ section {
 }
 
 /* redeploy trigger */
+
 
 
 
