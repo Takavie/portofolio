@@ -350,6 +350,60 @@ section {
     color: #ffffff;
     font-weight: 600;
 }
+/* ================= ABOUT BIODATA CARDS ================= */
+
+.about-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 26px;
+    margin-top: 60px;
+}
+
+.about-card {
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 32px 28px;
+    text-align: center;
+
+    transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.about-card i {
+    font-size: 2rem;
+    color: #00ffe7;
+    margin-bottom: 18px;
+}
+
+.about-card h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+}
+
+.about-card p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--muted);
+}
+
+/* card besar (visi) */
+.about-card.wide {
+    grid-column: span 2;
+}
+
+/* hover effect */
+.about-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(127,92,255,.25);
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+    .about-card.wide {
+        grid-column: span 1;
+    }
+}
 
 
 
@@ -674,6 +728,7 @@ section {
 }
 
 /* redeploy trigger */
+
 
 
 
