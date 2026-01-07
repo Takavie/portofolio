@@ -51,4 +51,21 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             block: "start"
         });
     });
+
+    /* ================= HAMBURGER MENU ================= */
+const hamburger = document.getElementById("hamburger");
+const navMenu = document.querySelector(".nav-menu");
+
+hamburger.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
 });
+
+/* Tutup menu setelah klik link */
+document.querySelectorAll(".nav-menu a").forEach(link => {
+    link.addEventListener("click", () => {
+        navMenu.classList.remove("active");
+    });
+});
+
+});
+
