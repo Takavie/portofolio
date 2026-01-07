@@ -701,33 +701,40 @@ footer {
     justify-content: center;
     z-index: 1001;
 }
-    /* ===== FIX OVERFLOW MOBILE ===== */
-html, body {
-    overflow-x: hidden !important;
-}
+    /* FIX MOBILE BERANTAKAN */
+@media (max-width: 768px) {
 
-/* cegah semua elemen absolute bocor */
-.hero,
-.navbar,
-section {
-    overflow-x: clip;
-}
+  html, body {
+    overflow-x: hidden;
+  }
 
-/* glow tidak mendorong layout */
-.hero-glow {
+  .about::before,
+  .achievements::before {
+    inset: -60px;
+    filter: blur(90px);
+  }
+
+  .about-cards,
+  .skills-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-card,
+  .skill-card,
+  .contact-card {
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .hero-glow {
     max-width: 100vw;
-}
-
-/* flex child aman */
-.nav-inner,
-.nav-right,
-.dual-btn {
-    min-width: 0;
-}
-
+    pointer-events: none;
+  }
 }
 
 /* redeploy trigger */
+
 
 
 
