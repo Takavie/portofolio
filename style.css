@@ -406,16 +406,6 @@ section {
 }
 
 
-
-/* ================= MOBILE ================= */
-@media (max-width: 768px) {
-    .about-card.wide {
-        grid-column: span 1;
-    }
-}
-
-
-
 /* ================= ACHIEVEMENTS ================= */
 .achievements {
     position: relative;
@@ -743,6 +733,7 @@ footer {
 }
 
 /* redeploy trigger */
+
 
 
 
